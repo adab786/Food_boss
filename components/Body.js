@@ -1,6 +1,6 @@
 import RestrauntContainer from "../components/RestrauntContainer";
 
-Body = () => {
+const Body = () => {
   return (
     <div>
       <RestrauntContainer />
