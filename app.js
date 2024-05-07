@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
-import RestrauntContainer from "./components/RestrauntContainer";
-import { reslist } from "./utils/reslist";
 import Body from "./components/Body";
 import About from "./components/About";
 import Contactus from "./components/Contactus";
@@ -16,7 +14,7 @@ import Error from "./components/Error";
 import Restaurant from "./components/Restaurant";
 // ----------------------------------------------------------------------------------------------------------------------------------
 
-Applayout = () => {
+const Applayout = () => {
   return (
     <div>
       <Header />
