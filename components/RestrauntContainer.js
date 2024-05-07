@@ -3,7 +3,6 @@ import Rescard from "./Rescard";
 import { BallTriangle } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { render } from "ejs";
 
 // key index value<<<<<<<map value
 const RestrauntContainer = () => {
