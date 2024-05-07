@@ -16,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/adab786/learn_react/issues"
   },
-  "homepage": "https://github.com/adab786/learn_react#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
