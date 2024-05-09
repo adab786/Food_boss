@@ -6,7 +6,7 @@ const useRestaurant = (resid) => {
     fetchdata();
   }, []);
   const [menu, setmenu] = useState(null);
-  fetchdata = async () => {
+  const fetchdata = async () => {
     const data = await fetch(MENU_URL + resid);
     const jasondata = await data.json();
     setmenu(jasondata?.data);
