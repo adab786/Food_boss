@@ -3,11 +3,13 @@ import Rescard from "./Rescard";
 import { BallTriangle } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlinestatus from "../utils/useOnlinestatus";
 
 // key index value<<<<<<<map value
 const RestrauntContainer = () => {
   const [reslistn, setlist] = useState([]);
   const [inputtxt, settxt] = useState("");
+  const onlinestatus = useOnlinestatus();
   useEffect(() => {
     fetchdata();
   }, []);
@@ -22,6 +24,9 @@ const RestrauntContainer = () => {
         ?.restaurants
     );
   };
+  if (onlinestatus == false) {
+    return <h1 className="p-2 m-3 text-lg">You are offline ......</h1>;
+  }
   if (reslistn.length == 0) {
     return (
       <div className="loader">
@@ -77,7 +82,7 @@ const RestrauntContainer = () => {
       <button
         className="bg-amber-500 p-3 m-3 rounded-lg shadow-xl"
         onClick={() => {
-          const reslistnew = reslistn.filter((res) => res.info.avgRating > 4);
+          const reslistnew = reslistn.filter((res) => res.info.avgRating > 4.5);
           setlist(reslistnew);
         }}
       >
