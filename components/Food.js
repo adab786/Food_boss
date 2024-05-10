@@ -10,7 +10,7 @@ const Food = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  fetchdata = async () => {
+  const fetchdata = async () => {
     const fooddata = await fetch(CONTAINER_DATA);
     const jasondata = await fooddata.json();
     setdata(
@@ -26,7 +26,7 @@ const Food = () => {
 
   return (
     <div className="">
-      <h1>whats on your mind</h1>
+      <h1 className="m-2 text-lg">whats on your mind</h1>
       <div className="flex w-full overflow-hidden overflow-x-scroll scroll-smooth scroll-m-3 snap-x no-scrollbar">
         {dataFood?.map((r) => {
           return (
