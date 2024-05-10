@@ -4,6 +4,8 @@ import { BallTriangle } from "react-loader-spinner";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlinestatus from "../utils/useOnlinestatus";
+import Food from "./Food";
+import { CONTAINER_DATA } from "../utils/constant";
 
 // key index value<<<<<<<map value
 const RestrauntContainer = () => {
@@ -13,10 +15,8 @@ const RestrauntContainer = () => {
   useEffect(() => {
     fetchdata();
   }, []);
-  const url =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
   const fetchdata = async () => {
-    const data = await fetch(url);
+    const data = await fetch(CONTAINER_DATA);
     const jsondata = await data.json();
     // optional chaining "?"
     setlist(
@@ -46,15 +46,7 @@ const RestrauntContainer = () => {
 
   return (
     <div className="">
-      {/* <Rescard resobj={resobj[0]} />
-        <Rescard resobj={resobj[1]} />
-        <Rescard resobj={resobj[2]} />
-        <Rescard resobj={resobj[3]} />
-        <Rescard resobj={resobj[4]} />
-        <Rescard resobj={resobj[5]} />
-        <Rescard resobj={resobj[6]} />
-        <Rescard resobj={resobj[7]} />
-        <Rescard resobj={resobj[8]} /> */}
+      <Food />
       <div className="p-2 m-3">
         <input
           type="text"
