@@ -1,3 +1,5 @@
+// usestrict
+
 import Rescard from "./Rescard";
 // import { reslist } from "../utils/reslist";
 import { BallTriangle } from "react-loader-spinner";
@@ -27,7 +29,7 @@ const RestrauntContainer = () => {
   if (onlinestatus == false) {
     return <h1 className="p-2 m-3 text-lg">You are offline ......</h1>;
   }
-  if (reslistn.length == 0) {
+  if (reslistn?.length == 0) {
     return (
       <div className="loader">
         <BallTriangle
@@ -81,7 +83,7 @@ const RestrauntContainer = () => {
         Top Rated
       </button>
       <div className="flex flex-wrap m-5 ">
-        {reslistn.map((r) => (
+        {reslistn?.map((r) => (
           <Link key={r.info.id} to={"resto/" + r.info.id}>
             <Rescard reslist={r} />
           </Link>

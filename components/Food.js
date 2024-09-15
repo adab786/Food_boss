@@ -30,13 +30,8 @@ const Food = () => {
       <div className="flex w-full overflow-hidden overflow-x-scroll scroll-smooth scroll-m-3 snap-x no-scrollbar">
         {dataFood?.map((r) => {
           return (
-            <div className=" w-52">
-              <Link
-                className="w-40"
-                key={r.id}
-                target="blank"
-                to={r.action.link}
-              >
+            <div key={r.id} className=" w-52">
+              <Link className="w-40" target="blank" to={r.action.link}>
                 <img
                   //   onClick={handleclick}
                   className=" w-40 cursor-pointer"
